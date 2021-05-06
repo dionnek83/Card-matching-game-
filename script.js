@@ -195,14 +195,12 @@ function generate() {
     // FRONT OF CARD
     var img1 = document.createElement("img");
     var arrayValue = `${array}`;
-    // img1.src = "./Images/" + arrayValue + ".png";
     img1.src = `./Images/${arrayValue}.png`;
     img1.className = "front-face";
 
     // BACK OF CARD
     var img2 = document.createElement("img");
     img2.src = `./Images/BackOfCard.png`;
-    // img2.src = `./Images/BackOfCard.jpg`;
     img2.className = "back-face";
     cardContainer.append(img1);
     cardContainer.append(img2);
