@@ -48,6 +48,7 @@ body {
 }
 
 .memory-card.flip {
+  -webkit-transform: rotate(180deg);
   transform: rotateY(180deg);
 }
 
@@ -57,11 +58,13 @@ body {
   height: 100%;
   position: absolute;
   border-radius: 5px;
+  transform-style: preserve-3d;
   backface-visibility: hidden;
 }
 
 .front-face {
   transform: rotateY(180deg);
+  -webkit-transform: rotate(180deg);
 }
 
 /* MENU OPTIONS  */
