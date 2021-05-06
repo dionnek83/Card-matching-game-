@@ -1,0 +1,387 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: rgb(0, 32, 91);
+}
+.game-info {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  color: whitesmoke;
+}
+
+.page-title {
+  text-align: center;
+  font-family: "Sofia", cursive;
+  color: whitesmoke;
+  font-size: 4em;
+  margin-top: 30px;
+}
+.memory-game {
+  display: flex;
+  margin: 40px 50px;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.memory-card {
+  width: 110px;
+  height: 120px;
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+.memory-card img {
+  width: 100%;
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 5px;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+
+/* MENU OPTIONS  */
+
+.menu-options {
+  display: flex;
+  flex-direction: column;
+  margin: 100px 0;
+}
+button {
+  width: 100px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5em;
+  border: none;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Sofia", cursive;
+  color: whitesmoke;
+  font-size: 6em;
+}
+a {
+  margin: 5px auto;
+}
+
+/* INSTRUCTION POPUP */
+
+.popup {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.815);
+  text-align: center;
+}
+
+.hide-popup {
+  display: none;
+}
+
+.game-over,
+.game-start {
+  width: 50%;
+  margin: 4% auto;
+  font-size: 1.2em;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.71);
+  border: 0px solid #000;
+  background: rgb(240, 179, 35);
+  color: black;
+  padding: 0.8em;
+}
+.heading {
+  font-size: 3em;
+  color: black;
+}
+.sub-heading {
+  text-align: center;
+  padding: 20px 0;
+  font-family: "Poppins", sans-serif;
+}
+ul li {
+  list-style-type: none;
+  line-height: 1.5;
+}
+
+ul {
+  text-align: center;
+  padding: 20px 0 30px;
+}
+.myButton {
+  background-color: black;
+  border: 1px solid whitesmoke;
+  border-radius: 3px;
+  color: whitesmoke;
+  transition: 0.3s;
+  font-family: "Poppins", sans-serif;
+}
+.myButton:hover {
+  background: rgb(0, 32, 91);
+}
+.diff-level {
+  text-align: center;
+  border: 1px solid whitesmoke;
+  font-size: 1.5em;
+  background-color: black;
+  color: whitesmoke;
+  padding: 0 150px;
+  font-family: "Poppins", sans-serif;
+}
+
+.diff-level option:hover {
+  background: rgb(0, 32, 91);
+}
+
+/* cards container */
+.deck {
+  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 3em;
+}
+
+/* Settings and restart icon  */
+span {
+  margin-left: 90%;
+}
+span i {
+  margin-right: 10px;
+}
+
+/* SETTINGS */
+
+#settings {
+  cursor: pointer;
+}
+#close-icon,
+#close-icon-help {
+  float: right;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px auto;
+}
+
+h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5em;
+}
+.settings {
+  width: 40%;
+  margin: 5% auto;
+  padding: 5px 10px;
+  text-align: center;
+}
+.settings.popup,
+.help.popup {
+  height: 60%;
+  left: 30%;
+  top: 10%;
+}
+
+.help {
+  margin: 5% auto;
+  width: 40%;
+  padding: 5px 10px;
+}
+
+.help p {
+  padding-top: 20px;
+}
+
+.restart {
+  width: 60%;
+  margin: 5% auto;
+  padding: 5px 10px;
+  text-align: center;
+}
+.restart.popup {
+  height: 60%;
+  left: 20%;
+  top: 10%;
+}
+.restart .diff-level {
+  margin-top: 30px;
+}
+
+#close-icon-restart {
+  float: right;
+  cursor: pointer;
+}
+
+.restart.game-start {
+  background: rgb(210, 38, 48);
+}
+
+#restart-icon {
+  cursor: pointer;
+}
+
+/* on/off button*/
+input[type="checkbox"] {
+  position: relative;
+  width: 100px;
+  height: 40px;
+  background: whitesmoke;
+  -webkit-appearance: none;
+  border-radius: 20px;
+  outline: none;
+  transition: 0.4s;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+input[type="checkbox"]::before {
+  z-index: 2;
+  position: absolute;
+  content: "";
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background: rgb(210, 38, 48);
+  border-radius: 50%;
+  transform: scale(1, 1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.4s;
+}
+
+input:checked[type="checkbox"]::before {
+  left: 60px;
+  background: rgb(0, 32, 91);
+}
+
+.toggle {
+  position: relative;
+}
+label {
+  position: absolute;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  pointer-events: none;
+  font-family: "Poppins", sans-serif;
+}
+.onButton {
+  bottom: 15px;
+  left: 15px;
+  color: black;
+}
+
+.offButton {
+  bottom: 15px;
+  right: 14px;
+  color: black;
+}
+
+/* GAME STATS  */
+
+.game-stats,
+.game-stats-heading {
+  color: whitesmoke;
+}
+.game-stats {
+  display: flex;
+}
+
+#time-remaining,
+#moves {
+  margin: 7px 0 0 10px;
+}
+
+.moves-container {
+  float: right;
+}
+
+.replay {
+  background-color: transparent;
+  width: 400px;
+  border: 5px solid black;
+}
+.time-over {
+  width: 60%;
+  margin: 5% auto;
+  padding: 5px 10px;
+  text-align: center;
+}
+.time-over.popup {
+  height: 60%;
+  left: 20%;
+  top: 10%;
+}
+.time-over.game-over {
+  background-color: rgb(210, 38, 48);
+}
+
+.won-popup {
+  width: 70%;
+  margin: 5% auto;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.won-popup.popup {
+  height: 60%;
+  left: 17%;
+  top: 10%;
+}
+
+.score-show,
+.time-show {
+  margin: 0;
+}
+.game-results {
+  margin-top: 80px;
+}
+
+.time-over-message {
+  font-size: 2em;
+  margin: 60px auto;
+  font-family: "Poppins", sans-serif;
+}
+
+.play-again {
+  width: 200px;
+  margin-top: 50px;
+  background-color: transparent;
+  border: 3px solid black;
+}
+
+.replay:hover,
+.play-again:hover {
+  background-color: black;
+  color: whitesmoke;
+}

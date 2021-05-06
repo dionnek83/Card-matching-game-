@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goals</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Sofia&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+   
+</head>
+<body>
+    <!-- GAME INTRODUCTION SECTION -->
+    <h1 class="page-title"> Goals Card memory game</h1>
+    <div class="popup start-popup">
+        <div class="game-start">
+          <h1 class="heading">Goals Card memory game</h1>
+          <h2 class="sub-heading"> Game instructions </h2>
+          <ul>
+            <li>The objective of the game is to find all the matching pairs in the game.</li>
+            <li>Turn over two hidden cards at a time to find the pairs </li>
+            <li>Once a pair has been found that pair will remain turned over</li>
+            <li>Non-matching pairs will turn over</li>
+          </ul>
+    
+<select name="Difficulty Level" id="Difficulty Level" class="diff-level">
+    <option value="easy">Easy</option>
+    <option value="medium">Medium</option>
+    <option value="hard">Hard</option>
+</select>
+
+
+
+          <h2 class="sub-heading">Pick the level of Difficulty to play the game</h2>
+          <button class="myButton start-game">Play</button>
+        </div>
+      </div>
+
+
+<!-- SETTINGS SECTION -->
+    <div class="popup game-start settings hide-popup">
+        <i class="far fa-times-circle fa-2x" id="close-icon"></i>
+    <h1 class="heading">Settings</h1>
+  <div class="container">
+    <div class="sound-container">
+        <h3>Sounds</h3>
+        <h3>Music</h3>
+    </div>
+    <div class="music-container">
+       <div class="toggle">
+           <input type="checkbox" name="" id="sound-checkbox" checked>
+           <label class="onButton">ON</label>
+           <label  class="offButton">OFF</label>
+       </div>
+       <div class="toggle">
+        <input type="checkbox" name="" id="music-checkbox" checked>
+        <label class="onButton">ON</label>
+        <label class="offButton">OFF</label>
+    </div>
+        
+    </div>
+</div>
+<button class="myButton start-game helpButton">Help</button> 
+</div>
+
+<!-- HELP SECTION -->
+<div class="popup game-start help hide-popup">
+    <i class="far fa-times-circle fa-2x" id="close-icon-help"></i>
+<h1 class="heading">Help</h1>
+<p>
+    The objective of the game is to find all the matching pairs in the game.
+    Turn over two hidden cards at a time to find the pairs 
+    Once a pair has been found that pair will remain turned over
+    Non-matching pairs will turn over
+</p>
+
+</div>
+
+<!-- RESTART SECTION -->
+<div class="popup game-start restart hide-popup">
+    <i class="far fa-times-circle fa-2x" id="close-icon-restart"></i>
+<h1 class="heading">Restart Game</h1>
+
+<select name="Difficulty Level" id="restartLevel" class="diff-level ">
+    <option value="easy">Easy</option>
+    <option value="medium">Medium</option>
+    <option value="hard">Hard</option>
+</select>
+
+<h2 class="sub-heading">Pick the level of Difficulty to play the game</h2>
+<button class="myButton restart-game">Play</button>
+</div>
+
+
+
+<!-- GAME SECTION -->
+        <section class="memory-game">
+            
+            <div class="game-stats"> 
+                <h2 class="game-stats-heading">Time</h2>
+
+                <span id="time-remaining">
+                    0
+                </span>
+               
+            </div>
+                
+            <span>
+                <i class="fas fa-redo-alt fa-2x " id="restart-icon" ></i>
+                <i class="fas fa-cog fa-2x" id="settings"></i>
+            </span>
+       
+
+            <div class="deck">
+
+            </div>
+            
+           
+            <div class="game-stats moves-container"> 
+                <h2 class="game-stats-heading">Moves</h2>
+               <span id="moves">
+                    0
+                </span>
+            </div>
+               
+
+        </div>
+
+        
+          </section>
+        
+          <div class="popup game-over time-over hide-popup">
+              <h1 class="heading">Game Over</h1>
+              <p class="time-over-message">You ran out of Time</p>
+              <button class="replay">Click here to Restart</button>
+          </div>
+
+
+          <div class="popup game-over won-popup hide-popup">
+            <div class="won-game">
+              <h1 class="heading"> <i class="fa fa-trophy"></i> Congratulations You won !!! <i class="fa fa-trophy"></i> </h1>
+             
+              <div class="game-results">
+                  <div class="time">
+                    <h2>Time Taken : <span class="time-show"></span> seconds</h2>
+                  </div>
+                  <button class="play-again">Play again</button>
+            
+              </div>
+            </div>
+          </div>
+
+          <script src="./script.js"></script>
+        </body>
+        </html>
+        
+        
+</body>
+</html>
