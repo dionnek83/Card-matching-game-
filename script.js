@@ -195,7 +195,8 @@ function generate() {
     // FRONT OF CARD
     var img1 = document.createElement("img");
     var arrayValue = `${array}`;
-    img1.src = "./Images/" + arrayValue + ".png";
+    // img1.src = "./Images/" + arrayValue + ".png";
+    img1.src = `./Images/${arrayValue}.png`;
     img1.className = "front-face";
 
     // BACK OF CARD
